@@ -11,6 +11,7 @@
 	function nextPage() {
 		location.href="DispatcherServlet?command=list&pageNo=${lvo.pagingBean.endPageOfPageGroup+1}";
 		alert("라지혜");
+		alert("강석진");
 	}
 	function prePage() {
 		location.href="DispatcherServlet?command=list&pageNo=${lvo.pagingBean.startPageOfPageGroup-1}";
