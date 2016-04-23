@@ -10,6 +10,7 @@
 <script type="text/javascript">
 	function nextPage() {
 		location.href="DispatcherServlet?command=list&pageNo=${lvo.pagingBean.endPageOfPageGroup+1}";
+		alert("라지혜");
 	}
 	function prePage() {
 		location.href="DispatcherServlet?command=list&pageNo=${lvo.pagingBean.startPageOfPageGroup-1}";
