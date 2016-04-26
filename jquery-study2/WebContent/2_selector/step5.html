@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#tf").submit(function(){
+			//alert("form select");
+			
+			//input tag 수 : input으로 시작하는 tag수 즉, textarea는 포함X
+			//alert("input tag 수 : " +$("#tf input").length); //5(textarea포함X)
+			//alert("form 입력 양식 수 : " +$("#tf :input").length); //6(textarea포함)
+			
+			//radio button 수
+			//alert("radio 버튼 수 : "+$("#tf :radio").length);//3
+			
+			//name이 gender인 radio button 수
+			//alert("gender radio 버튼 수 : "+$("#tf :radio[name=gender]").length);//2
+			
+			//name이 gender인 선택된 radio button 수
+			//alert("gender radio 선택 버튼 수 : "+$("#tf :radio[name=gender]:checked").length);//1
+			
+			//name이 gender인 선택된 radio value를 출력
+			//alert("gender radio value를 출력 : "+$("#tf :radio[name=gender]:checked").val());
+			
+			//textarea의 name의 ta인 요소의 입력값을 alert로 출력
+			alert($("#tf textarea[name=ta]").val());
+			
+			//id contentView div에 ta value를 setting
+			$("#contentView").text($("#tf textarea[name=ta]").val());
+			
+			//textarea name ta value를 삭제
+			$("#tf textarea[name=ta]").val("");
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- tf 아이디의 form 이 submit 될 때 alert("form select") 출력 후 전송을 막는다 -->
+	<form id="tf" action="a.jsp">
+		<input type="radio" name="gender" value="남자">남<br>
+		<input type="radio" name="gender" value="여자">여<br>
+		<input type="radio" name="hobby" value="독서">독서<br>
+		<input type="hidden" name="mode" value="find">
+		<textarea rows="5" cols="20" name="ta"></textarea>
+		<input type="submit" value="전송">
+	</form>
+<div id="contentView"></div>
+</body>
+</html>
+

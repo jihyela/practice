@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#changeButton").click(function(){
+			alert($(this).val());
+			//div 바로 아래 자식 요소 ul(넘버가 없는 순서), ol(넘버가 있는 순서)
+			//$("div>ul").css("background","yellow");
+			//id가 desc인 대상 다음에 나오는 모든 형제 요소 중 a태그를 select
+			$("#desc~a").css("background","yellow");
+		});
+	});
+</script>
+</head>
+<body>
+<input type="button" value="셀렉터적용" id="changeButton">
+ <br><br>
+ <hr>
+ <div id="park">박병호</div>
+ <hr>
+ <div>
+  <!--  순서가 없는 목록 태그 -->
+  점심메뉴 <a href="">스타벅스</a>
+  <ul>
+   <li>피자</li>
+   <li>삼겹살</li>
+   <li>꽃등심</li>
+  </ul>
+ </div>
+ 저녁메뉴
+  <ul>
+   <li>소주</li>
+   <li>맥주</li>
+   <li>막걸리</li>
+  </ul>
+  <a href="">스타벅스</a>
+  <p id="desc">주소~~판교</p>
+  <a href="">커피빈</a>
+  <a href="">할리스</a>
+  <a href="">AAA</a>
+</body>
+</html>
+
+
+
+
+
+
+

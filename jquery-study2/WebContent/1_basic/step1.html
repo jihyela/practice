@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#jqueryTest").click(function(){
+			alert($(this).text());
+		});
+		
+		$("a").click(function(){
+			return confirm($(this).text()+" 이동하시겠습니까?");
+		});
+		
+		$(".jqueryClassTest").click(function(){
+			$(this).fadeOut(3000);
+		});
+	});
+</script>
+</head>
+<body>
+<div id="jqueryTest">jquery id selector test</div>
+<br><br>
+<a href="http://www.google.com">google</a><br>
+<a href="http://www.naver.com">naver</a><br>
+<br><br>
+<span class="jqueryClassTest">jquery id selector test</span>
+<br><br>
+<p class="jqueryClassTest">jquery class selector test2</p>
+<!-- 
+	id가 jqueryTest인 대상을 클릭하면 alert으로 자신의 텍스트 정보가 출력된다.
+	a tag 전체를 대상으로 링크를 클릭하면 confirm을 이용해 네이버로 이동하시겠습니까? 확인 누를때만 이동
+	class가 jqueryClassTest인 대상들은 자신의 영역에 클릭이벤트가 발생하면 3000 후 fadeOut 처리되게 한다.
+ -->
+</body>
+</html>

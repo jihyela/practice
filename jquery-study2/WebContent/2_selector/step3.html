@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#changeTable").click(function(){
+			//alert($(this).val());
+			
+			//step1. 아이디가 test인 테이블의 첫번쨰 tr만 select
+			//$("#test tr:first").css("background","yellow");
+			//첫번째 tr을 선택하여 text 정보를 alert으로 출력
+			//alert($("#test tr:first").text());
+			//text 대신 html()을 적용해 비교해본다.
+			//alert($("#test tr:first").html());
+			
+			//step2. test id 테이블의 홀수번째 또는 짝수번째 tr select
+			//$("#test tr:even").css("background","yellow");
+			
+			//step3. test id 테이블의 tr 중 첫번째 자식요소(td) select
+			//$("#test tr td:first-child").css("background","yellow");
+			
+			//step4. 특정 조건에 일치하는 요소를 select
+			//조건 : tr index 1인 대상을 select(index 0부터)
+			//$("#test tr:eq(1)").css("background","yellow");
+			
+			//step5. 특정 데이터가 포함되는 요소를 select
+			$("#test td:contains(r)").css("background","yellow");
+		});
+		$("#test td").click(function(){
+			alert($(this).text());
+		});
+	});
+</script>
+</head>
+<body>
+<input type="button" value="테이블테스트" id="changeTable">
+<br><br><br>
+<table id="test" border="1" cellpadding="5">
+	<tr>
+		<td>java</td><td>아이유</td><td>판교</td>
+	</tr>
+	<tr>
+		<td>spring</td><td>장기하</td><td>강남</td>
+	</tr>
+	<tr>
+		<td>jquery</td><td>조인성</td><td>마포</td>
+	</tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

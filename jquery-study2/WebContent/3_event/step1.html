@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#imgView").hide();
+		$("#showBtn").click(function(){
+			$("#imgView").show();
+		});
+		$("#stateBtn").click(function(){
+			//css 속성 display가 none 상태 -> hide (true)
+			//                 block 상태 -> show (false)
+			alert($("#imgView").css("display")=="none");//true 출력되면 hide 상태
+		});
+		
+		$("#toggleBtn").click(function(){
+			$("#imgView").toggle(1000);
+		});
+		
+		$("#descView").hide();		
+		$("#desc").click(function(){
+			/* $("#descView").toggle();
+			if($("#descView").css("display")=="none") {
+				$(this).text("송중기 정보더보기");
+			} else{
+				$(this).text("접기");
+			} */
+			
+			//첫번째 인자값은 시간, 두번째 인자값은 (handler) 토글 수행완료시 실행될 동작
+			$("#descView").toggle(1000, function(){
+				if($("#descView").css("display")=="none") {
+					$("#desc").text("송중기 정보더보기");
+				} else{
+					$("#desc").text("접기");
+				}
+			});
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 처음 페이지 로드시에는 이미지가 보이지 않게 처리하고 
+		  showBtn 버튼 클릭시에 보이게 한다. 
+	 -->
+	<div id="imgView"><img src="iu.jpg"></div>
+	<input type="button" value="사진보기" id="showBtn">
+	<input type="button" value="상태확인" id="stateBtn">
+	<input type="button" value="토글테스트" id="toggleBtn">
+	<hr>
+	<span id="desc">송중기 정보더보기</span>
+	<p id="descView">
+		송중기 잘생겼고 공부도 잘하고 <br>
+		뛰어난 언변에 완벽남이다. 
+	</p>
+	<!--		id descView 는 화면 로드시에 hide 된다.  
+				id desc 인 송중기 정보더보기를 클릭하면 
+				id descView 가 show 된다. 
+				이 때 송중기 정보더보기는 접기로 변경된다. 
+				접기를 다시 클릭하면 descView는 다시 hide 된다. 
+	 -->
+</body>
+</html>
+
+

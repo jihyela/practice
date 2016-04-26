@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#hideBtn").click(function(){
+			//.hide([duration][, complete])
+			$("#imgView").hide(3000, function(){
+				alert("아이유 없다");
+			});
+		});
+		
+		$("#showBtn").click(function(){
+			$("#imgView").show(3000, function(){
+				alert("아이유 있다");
+			});
+			
+		}) 
+	});
+</script>
+</head>
+<body>
+	<div id="imgView">
+		<img src="iu.jpg">
+	</div>
+	<input type="button" id="hideBtn" value="감추기">
+	<input type="button" id="showBtn" value="보기">
+</body>
+</html>
+
+
+
+
+
+
+

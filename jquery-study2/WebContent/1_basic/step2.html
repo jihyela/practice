@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+	//document 로드시에 모든 동작을 바인딩(이벤트 등록)
+	$(document).ready(function(){
+		$("#testBtn").click(function(){
+			alert($("#testBtn").val());
+			$(".student").css("background", "yellow");
+		});
+		
+		//다수의 셀렉터를 지정하여 이벤트 바인딩
+		//$("셀렉터", "셀렉터", "셀렉터")
+		$(".teacher, .addressView, #nameTxt").click(function(){
+			alert(1);
+		});
+	});
+</script>
+<body>
+<!-- step1 
+     id testBtn만을 대상으로만 
+	 해당 버튼 눌렀을때 자신의 value를 alert으로 출력!
+	 step2
+	 id testBtn 을 클릭하면 
+	 class student 요소의 배경색이 yellow 로 적용 
+	 step3
+	 teacher , addressView class 와 nameTxt id 를 가진 대상 요소들에
+	 한해서 클릭시에 자신의 text를 alert으로 출력하도록 한다 
+	 셀렉터,셀렉터,셀렉터
+ -->
+<input type="button" value="테스트버튼" id="testBtn">
+<br>
+<input type="button" value="그냥버튼" >
+<br>
+<div class="student">아이유</div>
+<br>
+<div class="teacher">송중기</div>
+<br>
+<span class="student">설현</span>
+<br>
+<p id="nameTxt">전지현</p>
+<br>
+<div class="addressView">판교</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

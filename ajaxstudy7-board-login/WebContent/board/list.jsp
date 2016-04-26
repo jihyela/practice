@@ -12,7 +12,7 @@
 		location.href="DispatcherServlet?command=list&pageNo=${lvo.pagingBean.endPageOfPageGroup+1}";
 		alert("라지혜");
 		alert("강석진");
-		alert("손문수")
+		alert("손문수");
 	}
 	function prePage() {
 		location.href="DispatcherServlet?command=list&pageNo=${lvo.pagingBean.startPageOfPageGroup-1}";

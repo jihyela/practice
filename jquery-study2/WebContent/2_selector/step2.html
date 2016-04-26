@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#changeUI").click(function(){
+			//alert($(this).val());
+			//id가 bookList인 요소의 바로 아래 자식 요소 p를 선택해 배경색 yellow 지정
+			$("#bookList>p").css("background","yellow");
+			//id bookList 대상 다음에 나오는 형제 요소 중 p를 선택
+			//배경색 오렌지
+			$("#bookList~p").css("background","orange");
+			//id bookList 대상의 바로 다음에 나오는 형제 요소 p
+			//배경색 blue
+			$("#bookList+p").css("background","blue");
+		});
+	});
+</script>
+</head>
+<body>
+	selector 연습 2 
+	<input type="button" value="테스트" id="changeUI">
+	<hr>
+	<div id="bookList">
+ 		<p>BOOK List</p>
+	</div>
+	<p>말콤글레드웰</p>
+	<span>블링크</span>
+	<p>신영복</p>
+	<span>감옥으로부터의 사색</span>
+	<p>바라바시</p>
+	<span>링크</span>
+	<div id="product">알라딘</div>
+</body>
+</html>
+
